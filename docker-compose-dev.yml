@@ -20,6 +20,6 @@ services:
     depends_on:
       - db-postgres
     volumes:
-      - ./tests:/src/tests
+      - ./tests:/app/tests
 volumes:
   postgres-data:

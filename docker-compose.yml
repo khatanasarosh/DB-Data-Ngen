@@ -8,6 +8,5 @@ services:
     env_file:
       - ./env/db.env
     volumes:
-      - ./src:/src
-    working_dir: /src
+      - ./src:/app/src
     tty: true
