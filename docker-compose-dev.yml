@@ -15,6 +15,11 @@ services:
     ports:
       - ${DB_PORT}:${DB_PORT}
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
+  db-ngen:
+    depends_on:
+      - db-postgres
+    volumes:
+      - ./tests:/src/tests
 volumes:
   postgres-data:
