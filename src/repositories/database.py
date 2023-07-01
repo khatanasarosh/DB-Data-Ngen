@@ -6,5 +6,9 @@ class DatabaseRepository(ABC):
         pass
     
     @abstractmethod
-    def get_all_data(self, table_name):
+    def get_all_data_from_table(self, table_name):
+        pass
+
+    @abstractmethod
+    def get_table_schema(self, table_name):
         pass
