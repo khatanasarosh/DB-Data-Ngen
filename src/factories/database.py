@@ -2,10 +2,10 @@
 
 # Path: app/src/factories/db_connection.py
 
-from app.src.db.postgres import Postgres
-from app.src.db.mysql import Mysql
-from app.src.db.mariadb import MariaDB
-from app.src.exceptions.invalid_db_type import InvalidDBType
+from src.db.postgres import Postgres
+from src.db.mysql import Mysql
+from src.db.mariadb import MariaDB
+from src.exceptions.invalid_db_type import InvalidDBType
 
 class DatabaseFactory:
     def __init__(self):

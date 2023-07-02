@@ -1,4 +1,4 @@
-from app.src.db.database import Database
+from src.db.database import Database
 
 class Mysql(Database):
     def get_engine(self, host, port, username, password, database):

@@ -1,4 +1,4 @@
-from app.src.utils.randomiser.randomiser import Randomiser
+from src.utils.randomiser.randomiser import Randomiser
 
 import random
 import string

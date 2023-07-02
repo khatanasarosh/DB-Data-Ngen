@@ -1,10 +1,10 @@
-from app.src.utils.randomiser.randomiser import Randomiser
-from app.src.utils.randomiser.string import StringRandomiser
-from app.src.utils.randomiser.integer import IntegerRandomiser
-from app.src.utils.randomiser.float import FloatRandomiser
-from app.src.utils.randomiser.bool import BoolRandomiser
-from app.src.utils.randomiser.datetime import DateTimeRandomiser
-from app.src.utils.randomiser.default import DefaultRandomiser
+from src.utils.randomiser.randomiser import Randomiser
+from src.utils.randomiser.string import StringRandomiser
+from src.utils.randomiser.integer import IntegerRandomiser
+from src.utils.randomiser.float import FloatRandomiser
+from src.utils.randomiser.bool import BoolRandomiser
+from src.utils.randomiser.datetime import DateTimeRandomiser
+from src.utils.randomiser.default import DefaultRandomiser
 
 import datetime
 
