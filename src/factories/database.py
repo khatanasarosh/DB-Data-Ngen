@@ -14,4 +14,3 @@ class DatabaseFactory:
             return MariaDB()
         else:
             raise InvalidDBType('Invalid database type')
-
