@@ -1,7 +1,3 @@
-# let's make database connection factory class.
-
-# Path: app/src/factories/db_connection.py
-
 from src.db.postgres import Postgres
 from src.db.mysql import Mysql
 from src.db.mariadb import MariaDB
