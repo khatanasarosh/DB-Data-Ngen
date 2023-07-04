@@ -11,12 +11,12 @@ class Database(ABC):
         pass
 
     def connect(self, host, port, username, password, database):
-        engine = self.get_engine(host, port, username, password, database)
-        self.connection = engine.connect()
+        self.engine = self.get_engine(host, port, username, password, database)
+        self.connection = self.engine.connect()
         self.metadata = MetaData()
         self.metadata.reflect(bind=self.connection)
         self.Base = automap_base(metadata=self.metadata)
-        self.Base.prepare(engine, reflect=True)
+        self.Base.prepare(self.engine, reflect=True)
         self.tables = self.Base.classes
 
     def disconnect(self):
