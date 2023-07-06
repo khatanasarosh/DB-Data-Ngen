@@ -41,6 +41,9 @@ class SQLAlchemyDatabaseRepository(DatabaseRepository):
         table = Table(table_name, metadata, schema=schema)
         table.create(self.database.engine)
 
+    def refresh_metadata(self):
+        self.database.refresh_metadata()
+
     def insert_data_into_table(self, table_name, data):
         table = Table(table_name, self.database.metadata, autoload=True, autoload_with=self.database.engine, always=False)
         self.database.connection.execute(table.insert(),data)

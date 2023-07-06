@@ -19,5 +19,11 @@ class Database(ABC):
         self.Base.prepare(self.engine, reflect=True)
         self.tables = self.Base.classes
 
+    def refresh_metadata(self):
+        self.metadata.reflect(bind=self.connection)
+        self.Base = automap_base(metadata=self.metadata)
+        self.Base.prepare(self.engine, reflect=True)
+        self.tables = self.Base.classes
+
     def disconnect(self):
         self.connection.close()
