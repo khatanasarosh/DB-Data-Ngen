@@ -48,3 +48,11 @@ class SQLAlchemyDatabaseRepository(DatabaseRepository):
         table = Table(table_name, self.database.metadata, autoload=True, autoload_with=self.database.engine, always=False)
         self.database.connection.execute(table.insert(),data)
         self.database.connection.commit()
+
+    def get_primary_keys(self, table_name):
+        table = Table(table_name, self.database.metadata, autoload=True, autoload_with=self.database.connection)
+        return [column.name for column in table.primary_key]
+
+    def get_foreign_keys(self, table_name):
+        table = Table(table_name, self.database.metadata, autoload=True, autoload_with=self.database.connection)
+        return [fk.parent.name for fk in table.foreign_key_constraints]

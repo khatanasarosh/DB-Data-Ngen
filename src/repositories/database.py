@@ -29,3 +29,11 @@ class DatabaseRepository(ABC):
     @abstractmethod
     def insert_data_into_table(self, table_name, data):
         pass
+
+    @abstractmethod
+    def get_primary_keys(self, table_name):
+        pass
+
+    @abstractmethod
+    def get_foreign_keys(self, table_name):
+        pass
