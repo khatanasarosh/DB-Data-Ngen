@@ -1,3 +1,5 @@
+from sqlalchemy import create_engine
+
 from src.db.database import Database
 
 class Mysql(Database):
