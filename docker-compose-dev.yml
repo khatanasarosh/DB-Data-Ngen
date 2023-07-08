@@ -5,15 +5,15 @@ services:
     image: postgres:13.1
     restart: always
     environment:
-      POSTGRES_HOST: ${DB_HOST}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_PORT: ${DB_PORT}
+      POSTGRES_HOST: ${SOURCE_DB_HOST}
+      POSTGRES_PORT: ${SOURCE_DB_PORT}
+      POSTGRES_USER: ${SOURCE_DB_USER}
+      POSTGRES_PASSWORD: ${SOURCE_DB_PASSWORD}
+      POSTGRES_DB: ${SOURCE_DB_DATABASE}
     env_file:
       - ./env/db.env
     ports:
-      - ${DB_PORT}:${DB_PORT}
+      - ${SOURCE_DB_PORT}:${SOURCE_DB_PORT}
     volumes:
       - postgres-data:/var/lib/postgresql/data
   db-ngen:
