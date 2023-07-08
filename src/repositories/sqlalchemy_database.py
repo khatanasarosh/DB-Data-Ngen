@@ -55,4 +55,4 @@ class SQLAlchemyDatabaseRepository(DatabaseRepository):
 
     def get_foreign_keys(self, table_name):
         table = Table(table_name, self.database.metadata, autoload=True, autoload_with=self.database.connection)
-        return [column.name for column in table.foreign_keys]
+        return [fk.parent.name for fk in table.foreign_key_constraints]
