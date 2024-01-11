@@ -3,7 +3,7 @@ version: "3.8"
 services:
   db-postgres:
     image: postgres:13.1
-    restart: always
+    restart: unless-stopped
     environment:
       POSTGRES_HOST: ${SOURCE_DB_HOST}
       POSTGRES_PORT: ${SOURCE_DB_PORT}
