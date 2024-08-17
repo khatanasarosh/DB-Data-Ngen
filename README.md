@@ -1,5 +1,5 @@
 # DB-Data-Ngen
-Standing for Database Data Analyser and Generator, this project aims will analyse data in a DB and produce fake data based on that.
+Standing for Database Data Analyser and Generator, this program will analyse data in a DB and produce fake data based on that.
 
 ## Behaviour
 - Connects with PostgreSQL, MySQL, MariaDB databases
